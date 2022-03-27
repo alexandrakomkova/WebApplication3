@@ -1,0 +1,23 @@
+﻿@using WebApplication3.Models
+@model IEnumerable<WebApplication3.Models.Phone>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p><a href="/Dict/Add/">new contact</a></p>
+<h2>Index</h2>
+<div>
+
+    @*@foreach (var item in Model)
+        {
+            <p>@item.lastname @item.phoneNumber <a href="/Dict/Update/@item.lastname">update</a>   <a href="/Dict/Delete/@item.lastname">delete</a></p>
+        }*@
+    @foreach (var item in Model)
+    {
+        <p>@item.lastname @item.phoneNumber <a href="/Dict/Update/@item.Id">update</a>   <a href="/Dict/Delete/@item.Id">delete</a></p>
+    }
+
+
+</div>

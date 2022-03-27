@@ -1,0 +1,46 @@
+﻿@model WebApplication3.Models.Phone
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+@*"UpdateSave", "Dict", FormMethod.Post*@
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <hr />
+        @Html.ValidationSummary(true, "")
+        <div>
+            @Html.LabelFor(model => model.lastname)
+            <div>
+                @Html.EditorFor(model => model.lastname)
+                @Html.ValidationMessageFor(model => model.lastname, "")
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.phoneNumber)
+            <div>
+                @Html.EditorFor(model => model.phoneNumber)
+                @Html.ValidationMessageFor(model => model.phoneNumber, "")
+            </div>
+        </div>
+        <br />
+        <div>
+            <div>
+                <input type="submit" value="save" />
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<div>
+    <br>
+    @Html.ActionLink("index", "Index")
+</div>  
